@@ -1,6 +1,6 @@
 import React from "react";
 import MyChildComp from "./Child";
-import * as actions from "./Actions";
+
 import { connect } from "react-redux";
 
 class App extends React.Component {
@@ -11,8 +11,8 @@ class App extends React.Component {
         {this.props.cartData && (
           <p>Cart has {this.props.cartData.itemCount} Items</p>
         )}
-        <button onClick={() => this.props.increaseItemCount(2)}>+</button>
-        <button onClick={() => this.props.decreaseItemCount(2)}>-</button>
+        <button onClick={() => this.props.increaseCount(2)}>+</button>
+        <button onClick={() => this.props.decreaseCount(2)}>-</button>
         <MyChildComp />
       </div>
     );
@@ -23,7 +23,7 @@ function mapGloabalStateToProps(globalState) {
   return globalState;
 }
 
-const propsSeAttatchKrnewlafunc = connect(mapGloabalStateToProps, actions); //returning function that adds props to a component
+const propsSeAttatchKrnewlafunc = connect(mapGloabalStateToProps); //returning function that adds props to a component
 
 const connectedComponent = propsSeAttatchKrnewlafunc(App);
 

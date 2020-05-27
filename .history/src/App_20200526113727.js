@@ -11,8 +11,8 @@ class App extends React.Component {
         {this.props.cartData && (
           <p>Cart has {this.props.cartData.itemCount} Items</p>
         )}
-        <button onClick={() => this.props.increaseItemCount(2)}>+</button>
-        <button onClick={() => this.props.decreaseItemCount(2)}>-</button>
+        <button onClick={() => this.props.increaseCount(2)}>+</button>
+        <button onClick={() => this.props.decreaseCount(2)}>-</button>
         <MyChildComp />
       </div>
     );
